@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
+
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+      <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -37,13 +38,13 @@
      <div class="image">          
     <div class="image__content">
         <img src="" alt="" class="image_src">
-       <img src="./images/close.svg" alt="" class="image_close_button">
+       <img src="<%=require('./images/close.svg')%>" alt="" class="image_close_button">
       </div>
        
       </div>
     <div class="popup_profile">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close-profile">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close-profile">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="profile">
             <input type="text" name="name"  class="popup__input popup__input_type_name" placeholder="Имя">
@@ -58,7 +59,7 @@
 
     <div class="popup_avatar">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close-avatar">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close-avatar">
         <h3 class="popup__title">Редактировать аватар</h3>
         <form class="popup__form" name="avatar">
             <input type="text" name="avatarLink"  class="popup__input popup__input_type_name" placeholder="Ссылка">
@@ -71,7 +72,7 @@
 
     <div class="popup">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="new">
             <input type="text" name="placeName" class="popup__input popup__input_type_name" placeholder="Название">
@@ -83,6 +84,6 @@
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>
